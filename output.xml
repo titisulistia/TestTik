@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on darwin)" generated="2024-10-24T18:27:02.453871" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Cases" source="/Users/titiksulistia/PycharmProjects/TestTik/test/test_cases.robot">
+<test id="s1-t1" name="Verify User able to search book in homepage" line="8">
+<kw name="When Open Browser to Bookstore" owner="test_repositories">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:27:02.536879" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/books'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-24T18:27:02.536780" elapsed="84.956482"/>
+</kw>
+<doc>Open the browser and navigate to bookstore homepage</doc>
+<status status="PASS" start="2024-10-24T18:27:02.536484" elapsed="84.958030"/>
+</kw>
+<kw name="Then Verify Search Book" owner="test_repositories">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:28:27.497222" elapsed="0.012888"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:28:27.510552" level="INFO">Typing text 'Richard E. Silverman' into text field 'id=searchBox'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>Richard E. Silverman</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:28:27.510340" elapsed="0.165997"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:28:27.708078" level="INFO">Current page contains text 'Richard E. Silverman'.</msg>
+<arg>Richard E. Silverman</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-10-24T18:28:27.676600" elapsed="0.031539"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CLICK_ITEM_SEARCH}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-24T18:28:27.708245" elapsed="0.012307"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:28:27.720785" level="INFO">Clicking element 'id=see-book-Git Pocket Guide'.</msg>
+<msg time="2024-10-24T18:28:28.966878" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-24T18:28:28.967109" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="mr-2" id="see-book-Git Pocket Guide"&gt;...&lt;/span&gt; is not clickable at point (467, 527). Other element would receive the click: &lt;iframe id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" name="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" width="970" height="100" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" aria-label="Advertisement" tabindex="0" allow="private-state-token-redemption;attribution-reporting" data-load-complete="true" style="border: 0px; vertical-align: bottom;" data-google-container-id="1"&gt;&lt;/iframe&gt;
+  (Session info: chrome=130.0.6723.69)
+Stacktrace:
+0   chromedriver                        0x0000000104e8f634 cxxbridge1$str$ptr + 3645404
+1   chromedriver                        0x0000000104e87e94 cxxbridge1$str$ptr + 3614780
+2   chromedriver                        0x00000001048f4104 cxxbridge1$string$len + 88416
+3   chromedriver                        0x000000010493ba74 cxxbridge1$string$len + 381648
+4   chromedriver                        0x000000010493a0dc cxxbridge1$string$len + 375096
+5   chromedriver                        0x0000000104938320 cxxbridge1$string$len + 367484
+6   chromedriver                        0x0000000104937534 cxxbridge1$string$len + 363920
+7   chromedriver                        0x000000010492ce14 cxxbridge1$string$len + 321136
+8   chromedriver                        0x000000010492c8b0 cxxbridge1$string$len + 319756
+9   chromedriver                        0x000000010496fbd0 cxxbridge1$string$len + 594988
+10  chromedriver                        0x000000010492af54 cxxbridge1$string$len + 313264
+11  chromedriver                        0x000000010492bba4 cxxbridge1$string$len + 316416
+12  chromedriver                        0x0000000104e5a1d4 cxxbridge1$str$ptr + 3427196
+13  chromedriver                        0x0000000104e5d518 cxxbridge1$str$ptr + 3440320
+14  chromedriver                        0x0000000104e415f8 cxxbridge1$str$ptr + 3325856
+15  chromedriver                        0x0000000104e5dddc cxxbridge1$str$ptr + 3442564
+16  chromedriver                        0x0000000104e3287c cxxbridge1$str$ptr + 3265060
+17  chromedriver                        0x0000000104e78884 cxxbridge1$str$ptr + 3551788
+18  chromedriver                        0x0000000104e78a00 cxxbridge1$str$ptr + 3552168
+19  chromedriver                        0x0000000104e87b2c cxxbridge1$str$ptr + 3613908
+20  libsystem_pthread.dylib             0x000000018feff2e4 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000018fefa0fc thread_start + 8
+</msg>
+<arg>${CLICK_ITEM_SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-10-24T18:28:27.720669" elapsed="1.252477">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="mr-2" id="see-book-Git Pocket Guide"&gt;...&lt;/span&gt; is not clickable at point (467, 527). Other element would receive the click: &lt;iframe id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" name="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" width="970" height="100" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" aria-label="Advertisement" tabindex="0" allow="private-state-token-redemption;attribution-reporting" data-load-complete="true" style="border: 0px; vertical-align: bottom;" data-google-container-id="1"&gt;&lt;/iframe&gt;
+  (Session info: chrome=130.0.6723.69)
+Stacktrace:
+0   chromedriver                        0x0000000104e8f634 cxxbridge1$str$ptr + 3645404
+1   chromedriver                        0x0000000104e87e94 cxxbridge1$str$ptr + 3614780
+2   chromedriver                        0x00000001048f4104 cxxbridge1$string$len + 88416
+3   chromedriver                        0x000000010493ba74 cxxbridge1$string$len + 381648
+4   chromedriver                        0x000000010493a0dc cxxbridge1$strin...
+    [ Message content over the limit has been removed. ]
+...er                        0x000000010492bba4 cxxbridge1$string$len + 316416
+12  chromedriver                        0x0000000104e5a1d4 cxxbridge1$str$ptr + 3427196
+13  chromedriver                        0x0000000104e5d518 cxxbridge1$str$ptr + 3440320
+14  chromedriver                        0x0000000104e415f8 cxxbridge1$str$ptr + 3325856
+15  chromedriver                        0x0000000104e5dddc cxxbridge1$str$ptr + 3442564
+16  chromedriver                        0x0000000104e3287c cxxbridge1$str$ptr + 3265060
+17  chromedriver                        0x0000000104e78884 cxxbridge1$str$ptr + 3551788
+18  chromedriver                        0x0000000104e78a00 cxxbridge1$str$ptr + 3552168
+19  chromedriver                        0x0000000104e87b2c cxxbridge1$str$ptr + 3613908
+20  libsystem_pthread.dylib             0x000000018feff2e4 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000018fefa0fc thread_start + 8</status>
+</kw>
+<doc>Verify user able to search book</doc>
+<status status="FAIL" start="2024-10-24T18:28:27.496214" elapsed="1.477107">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="mr-2" id="see-book-Git Pocket Guide"&gt;...&lt;/span&gt; is not clickable at point (467, 527). Other element would receive the click: &lt;iframe id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" name="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" width="970" height="100" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" aria-label="Advertisement" tabindex="0" allow="private-state-token-redemption;attribution-reporting" data-load-complete="true" style="border: 0px; vertical-align: bottom;" data-google-container-id="1"&gt;&lt;/iframe&gt;
+  (Session info: chrome=130.0.6723.69)
+Stacktrace:
+0   chromedriver                        0x0000000104e8f634 cxxbridge1$str$ptr + 3645404
+1   chromedriver                        0x0000000104e87e94 cxxbridge1$str$ptr + 3614780
+2   chromedriver                        0x00000001048f4104 cxxbridge1$string$len + 88416
+3   chromedriver                        0x000000010493ba74 cxxbridge1$string$len + 381648
+4   chromedriver                        0x000000010493a0dc cxxbridge1$strin...
+    [ Message content over the limit has been removed. ]
+...er                        0x000000010492bba4 cxxbridge1$string$len + 316416
+12  chromedriver                        0x0000000104e5a1d4 cxxbridge1$str$ptr + 3427196
+13  chromedriver                        0x0000000104e5d518 cxxbridge1$str$ptr + 3440320
+14  chromedriver                        0x0000000104e415f8 cxxbridge1$str$ptr + 3325856
+15  chromedriver                        0x0000000104e5dddc cxxbridge1$str$ptr + 3442564
+16  chromedriver                        0x0000000104e3287c cxxbridge1$str$ptr + 3265060
+17  chromedriver                        0x0000000104e78884 cxxbridge1$str$ptr + 3551788
+18  chromedriver                        0x0000000104e78a00 cxxbridge1$str$ptr + 3552168
+19  chromedriver                        0x0000000104e87b2c cxxbridge1$str$ptr + 3613908
+20  libsystem_pthread.dylib             0x000000018feff2e4 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000018fefa0fc thread_start + 8</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-10-24T18:28:28.973643" elapsed="0.000020"/>
+</kw>
+<doc>verify user able to search book -- note that on the website there's no response after clicked</doc>
+<status status="FAIL" start="2024-10-24T18:27:02.536180" elapsed="86.437644">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span class="mr-2" id="see-book-Git Pocket Guide"&gt;...&lt;/span&gt; is not clickable at point (467, 527). Other element would receive the click: &lt;iframe id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" name="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" width="970" height="100" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" aria-label="Advertisement" tabindex="0" allow="private-state-token-redemption;attribution-reporting" data-load-complete="true" style="border: 0px; vertical-align: bottom;" data-google-container-id="1"&gt;&lt;/iframe&gt;
+  (Session info: chrome=130.0.6723.69)
+Stacktrace:
+0   chromedriver                        0x0000000104e8f634 cxxbridge1$str$ptr + 3645404
+1   chromedriver                        0x0000000104e87e94 cxxbridge1$str$ptr + 3614780
+2   chromedriver                        0x00000001048f4104 cxxbridge1$string$len + 88416
+3   chromedriver                        0x000000010493ba74 cxxbridge1$string$len + 381648
+4   chromedriver                        0x000000010493a0dc cxxbridge1$strin...
+    [ Message content over the limit has been removed. ]
+...er                        0x000000010492bba4 cxxbridge1$string$len + 316416
+12  chromedriver                        0x0000000104e5a1d4 cxxbridge1$str$ptr + 3427196
+13  chromedriver                        0x0000000104e5d518 cxxbridge1$str$ptr + 3440320
+14  chromedriver                        0x0000000104e415f8 cxxbridge1$str$ptr + 3325856
+15  chromedriver                        0x0000000104e5dddc cxxbridge1$str$ptr + 3442564
+16  chromedriver                        0x0000000104e3287c cxxbridge1$str$ptr + 3265060
+17  chromedriver                        0x0000000104e78884 cxxbridge1$str$ptr + 3551788
+18  chromedriver                        0x0000000104e78a00 cxxbridge1$str$ptr + 3552168
+19  chromedriver                        0x0000000104e87b2c cxxbridge1$str$ptr + 3613908
+20  libsystem_pthread.dylib             0x000000018feff2e4 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000018fefa0fc thread_start + 8</status>
+</test>
+<test id="s1-t2" name="Verify User not able to search book in homepage" line="15">
+<kw name="When Open Browser to Bookstore" owner="test_repositories">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:28:28.975384" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/books'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-24T18:28:28.975284" elapsed="84.325314"/>
+</kw>
+<doc>Open the browser and navigate to bookstore homepage</doc>
+<status status="PASS" start="2024-10-24T18:28:28.975165" elapsed="84.326305"/>
+</kw>
+<kw name="Then Verify Search Book with wrong title" owner="test_repositories">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:29:53.305038" elapsed="0.010351"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:29:53.315757" level="INFO">Typing text 'nonExistenBook' into text field 'id=searchBox'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>nonExistenBook</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:29:53.315564" elapsed="0.152246"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-24T18:29:55.469326" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-24T18:29:53.467954" elapsed="2.001654"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:29:55.487058" level="INFO">Current page contains element 'xpath://div[@class='rt-noData' and text()='No rows found']'.</msg>
+<arg>xpath://div[@class='rt-noData' and text()='No rows found']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:29:55.470118" elapsed="0.017056"/>
+</kw>
+<doc>Verify not able to shown book</doc>
+<status status="PASS" start="2024-10-24T18:29:53.304302" elapsed="2.182988"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-24T18:29:55.487515" elapsed="0.097029"/>
+</kw>
+<doc>verify user able to search book -- note that on the website there's no response after clicked</doc>
+<status status="PASS" start="2024-10-24T18:28:28.974921" elapsed="86.609803"/>
+</test>
+<test id="s1-t3" name="Verify Login Logout page" line="21">
+<kw name="When Open Browser to Bookstore" owner="test_repositories">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:29:55.585284" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/books'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-24T18:29:55.585183" elapsed="83.503474"/>
+</kw>
+<doc>Open the browser and navigate to bookstore homepage</doc>
+<status status="PASS" start="2024-10-24T18:29:55.585064" elapsed="83.504556"/>
+</kw>
+<kw name="Then Verify User able to login" owner="test_repositories">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:31:19.092116" elapsed="0.010528"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:31:19.103010" level="INFO">Clicking element 'id=login'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:31:19.102811" elapsed="0.032420"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:31:19.135365" elapsed="0.004425"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:31:19.139999" level="INFO">Typing text 'testtik111' into text field 'id=userName'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:31:19.139886" elapsed="0.122012"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:31:19.262007" elapsed="0.004595"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:31:19.266780" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:31:19.266682" elapsed="0.056443"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:31:19.323227" elapsed="0.002220"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:31:19.325588" level="INFO">Clicking element 'id=login'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:31:19.325510" elapsed="0.014672"/>
+</kw>
+<doc>Verify user able to login</doc>
+<status status="PASS" start="2024-10-24T18:31:19.091283" elapsed="0.249252"/>
+</kw>
+<kw name="Then Verify User able to logout" owner="test_repositories">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGOUT_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:31:19.340788" elapsed="1.506096"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:31:20.847311" level="INFO">Clicking element 'id=submit'.</msg>
+<arg>${LOGOUT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:31:20.847080" elapsed="0.026689"/>
+</kw>
+<doc>verify user able to do logout</doc>
+<status status="PASS" start="2024-10-24T18:31:19.340669" elapsed="1.533185"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-24T18:31:20.873997" elapsed="0.096453"/>
+</kw>
+<doc>Verify user able to login</doc>
+<status status="PASS" start="2024-10-24T18:29:55.584867" elapsed="85.385808"/>
+</test>
+<test id="s1-t4" name="Verify User able to search book after login page" line="28">
+<kw name="When Open Browser to Bookstore" owner="test_repositories">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:31:20.971356" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/books'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-24T18:31:20.971242" elapsed="5.767743"/>
+</kw>
+<doc>Open the browser and navigate to bookstore homepage</doc>
+<status status="PASS" start="2024-10-24T18:31:20.971101" elapsed="5.768176"/>
+</kw>
+<kw name="Then Verify User able to login" owner="test_repositories">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:31:26.740022" elapsed="0.005764"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:31:26.746048" level="INFO">Clicking element 'id=login'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:31:26.745909" elapsed="0.024168"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:31:26.770188" elapsed="0.004682"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:31:26.775143" level="INFO">Typing text 'testtik111' into text field 'id=userName'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:31:26.775003" elapsed="0.080107"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:31:26.855220" elapsed="0.003853"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:31:26.859235" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:31:26.859140" elapsed="0.024183"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:31:26.883422" elapsed="0.002141"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:31:26.885704" level="INFO">Clicking element 'id=login'.</msg>
+<msg time="2024-10-24T18:31:28.502401" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-24T18:31:28.502650" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="login" type="button" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (718, 520). Other element would receive the click: &lt;iframe frameborder="0" src="https://d841b54ca2e5f2c78e058ace8e1197ba.safeframe.googlesyndication.com/safeframe/1-0-40/html/container.html" id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="private-state-token-redemption;attribution-reporting" aria-label="Advertisement" tabindex="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"&gt;&lt;/iframe&gt;
+  (Session info: chrome=130.0.6723.69)
+Stacktrace:
+0   chromedriver                        0x0000000104b03634 cxxbridge1$str$ptr + 3645404
+1   chromedriver                        0x0000000104afbe94 cxxbridge1$str$ptr + 3614780
+2   chromedriver                        0x0000000104568104 cxxbridge1$string$len + 88416
+3   chromedriver                        0x00000001045afa74 cxxbridge1$string$len + 381648
+4   chromedriver                        0x00000001045ae0dc cxxbridge1$string$len + 375096
+5   chromedriver                        0x00000001045ac320 cxxbridge1$string$len + 367484
+6   chromedriver                        0x00000001045ab534 cxxbridge1$string$len + 363920
+7   chromedriver                        0x00000001045a0e14 cxxbridge1$string$len + 321136
+8   chromedriver                        0x00000001045a08b0 cxxbridge1$string$len + 319756
+9   chromedriver                        0x00000001045e3bd0 cxxbridge1$string$len + 594988
+10  chromedriver                        0x000000010459ef54 cxxbridge1$string$len + 313264
+11  chromedriver                        0x000000010459fba4 cxxbridge1$string$len + 316416
+12  chromedriver                        0x0000000104ace1d4 cxxbridge1$str$ptr + 3427196
+13  chromedriver                        0x0000000104ad1518 cxxbridge1$str$ptr + 3440320
+14  chromedriver                        0x0000000104ab55f8 cxxbridge1$str$ptr + 3325856
+15  chromedriver                        0x0000000104ad1ddc cxxbridge1$str$ptr + 3442564
+16  chromedriver                        0x0000000104aa687c cxxbridge1$str$ptr + 3265060
+17  chromedriver                        0x0000000104aec884 cxxbridge1$str$ptr + 3551788
+18  chromedriver                        0x0000000104aeca00 cxxbridge1$str$ptr + 3552168
+19  chromedriver                        0x0000000104afbb2c cxxbridge1$str$ptr + 3613908
+20  libsystem_pthread.dylib             0x000000018feff2e4 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000018fefa0fc thread_start + 8
+</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-10-24T18:31:26.885626" elapsed="1.619827">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="login" type="button" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (718, 520). Other element would receive the click: &lt;iframe frameborder="0" src="https://d841b54ca2e5f2c78e058ace8e1197ba.safeframe.googlesyndication.com/safeframe/1-0-40/html/container.html" id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="private-state-token-redemption;attribution-reporting" aria-label="Advertisement" tabindex="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"&gt;&lt;/iframe&gt;
+  (Session info: chrome=130.0.6723.69)
+Stacktrace:
+0   chromedriver                        0x0000000104b03634 cxxbridge1$str$ptr + 3645404
+1   chromedriver                        0x0000000104afbe94 cxxbridge1$str$ptr + 3614780
+2   chromedriver                        0x0000000104568104 cxxbridge1$string$len + 88416
+    [ Message content over the limit has been removed. ]
+...er                        0x000000010459fba4 cxxbridge1$string$len + 316416
+12  chromedriver                        0x0000000104ace1d4 cxxbridge1$str$ptr + 3427196
+13  chromedriver                        0x0000000104ad1518 cxxbridge1$str$ptr + 3440320
+14  chromedriver                        0x0000000104ab55f8 cxxbridge1$str$ptr + 3325856
+15  chromedriver                        0x0000000104ad1ddc cxxbridge1$str$ptr + 3442564
+16  chromedriver                        0x0000000104aa687c cxxbridge1$str$ptr + 3265060
+17  chromedriver                        0x0000000104aec884 cxxbridge1$str$ptr + 3551788
+18  chromedriver                        0x0000000104aeca00 cxxbridge1$str$ptr + 3552168
+19  chromedriver                        0x0000000104afbb2c cxxbridge1$str$ptr + 3613908
+20  libsystem_pthread.dylib             0x000000018feff2e4 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000018fefa0fc thread_start + 8</status>
+</kw>
+<doc>Verify user able to login</doc>
+<status status="FAIL" start="2024-10-24T18:31:26.739719" elapsed="1.766056">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="login" type="button" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (718, 520). Other element would receive the click: &lt;iframe frameborder="0" src="https://d841b54ca2e5f2c78e058ace8e1197ba.safeframe.googlesyndication.com/safeframe/1-0-40/html/container.html" id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="private-state-token-redemption;attribution-reporting" aria-label="Advertisement" tabindex="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"&gt;&lt;/iframe&gt;
+  (Session info: chrome=130.0.6723.69)
+Stacktrace:
+0   chromedriver                        0x0000000104b03634 cxxbridge1$str$ptr + 3645404
+1   chromedriver                        0x0000000104afbe94 cxxbridge1$str$ptr + 3614780
+2   chromedriver                        0x0000000104568104 cxxbridge1$string$len + 88416
+    [ Message content over the limit has been removed. ]
+...er                        0x000000010459fba4 cxxbridge1$string$len + 316416
+12  chromedriver                        0x0000000104ace1d4 cxxbridge1$str$ptr + 3427196
+13  chromedriver                        0x0000000104ad1518 cxxbridge1$str$ptr + 3440320
+14  chromedriver                        0x0000000104ab55f8 cxxbridge1$str$ptr + 3325856
+15  chromedriver                        0x0000000104ad1ddc cxxbridge1$str$ptr + 3442564
+16  chromedriver                        0x0000000104aa687c cxxbridge1$str$ptr + 3265060
+17  chromedriver                        0x0000000104aec884 cxxbridge1$str$ptr + 3551788
+18  chromedriver                        0x0000000104aeca00 cxxbridge1$str$ptr + 3552168
+19  chromedriver                        0x0000000104afbb2c cxxbridge1$str$ptr + 3613908
+20  libsystem_pthread.dylib             0x000000018feff2e4 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000018fefa0fc thread_start + 8</status>
+</kw>
+<kw name="Then Verify Search Book after login" owner="test_repositories">
+<doc>Verify user able to search book</doc>
+<status status="NOT RUN" start="2024-10-24T18:31:28.505978" elapsed="0.000020"/>
+</kw>
+<kw name="Then Verify User able to logout" owner="test_repositories">
+<doc>verify user able to do logout</doc>
+<status status="NOT RUN" start="2024-10-24T18:31:28.506064" elapsed="0.000011"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-10-24T18:31:28.506140" elapsed="0.000009"/>
+</kw>
+<doc>verify user able to search book -- note that on the website there's no response after clicked</doc>
+<status status="FAIL" start="2024-10-24T18:31:20.970837" elapsed="7.535397">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="login" type="button" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (718, 520). Other element would receive the click: &lt;iframe frameborder="0" src="https://d841b54ca2e5f2c78e058ace8e1197ba.safeframe.googlesyndication.com/safeframe/1-0-40/html/container.html" id="google_ads_iframe_/21849154601,22343295815/Ad.Plus-Anchor_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="private-state-token-redemption;attribution-reporting" aria-label="Advertisement" tabindex="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"&gt;&lt;/iframe&gt;
+  (Session info: chrome=130.0.6723.69)
+Stacktrace:
+0   chromedriver                        0x0000000104b03634 cxxbridge1$str$ptr + 3645404
+1   chromedriver                        0x0000000104afbe94 cxxbridge1$str$ptr + 3614780
+2   chromedriver                        0x0000000104568104 cxxbridge1$string$len + 88416
+    [ Message content over the limit has been removed. ]
+...er                        0x000000010459fba4 cxxbridge1$string$len + 316416
+12  chromedriver                        0x0000000104ace1d4 cxxbridge1$str$ptr + 3427196
+13  chromedriver                        0x0000000104ad1518 cxxbridge1$str$ptr + 3440320
+14  chromedriver                        0x0000000104ab55f8 cxxbridge1$str$ptr + 3325856
+15  chromedriver                        0x0000000104ad1ddc cxxbridge1$str$ptr + 3442564
+16  chromedriver                        0x0000000104aa687c cxxbridge1$str$ptr + 3265060
+17  chromedriver                        0x0000000104aec884 cxxbridge1$str$ptr + 3551788
+18  chromedriver                        0x0000000104aeca00 cxxbridge1$str$ptr + 3552168
+19  chromedriver                        0x0000000104afbb2c cxxbridge1$str$ptr + 3613908
+20  libsystem_pthread.dylib             0x000000018feff2e4 _pthread_start + 136
+21  libsystem_pthread.dylib             0x000000018fefa0fc thread_start + 8</status>
+</test>
+<test id="s1-t5" name="Verify User not able to search book after login page" line="36">
+<kw name="When Open Browser to Bookstore" owner="test_repositories">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:31:28.507000" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/books'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-24T18:31:28.506898" elapsed="175.279150"/>
+</kw>
+<doc>Open the browser and navigate to bookstore homepage</doc>
+<status status="PASS" start="2024-10-24T18:31:28.506779" elapsed="175.280683"/>
+</kw>
+<kw name="Then Verify User able to login" owner="test_repositories">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:34:23.790147" elapsed="0.033526"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:34:23.824176" level="INFO">Clicking element 'id=login'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:34:23.823892" elapsed="0.122757"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:34:23.946790" elapsed="0.011751"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:34:23.958821" level="INFO">Typing text 'testtik111' into text field 'id=userName'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:34:23.958668" elapsed="0.312156"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:34:24.270956" elapsed="0.013349"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:34:24.284515" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:34:24.284399" elapsed="0.097265"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:34:24.381841" elapsed="0.005860"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:34:24.388302" level="INFO">Clicking element 'id=login'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:34:24.388155" elapsed="0.047091"/>
+</kw>
+<doc>Verify user able to login</doc>
+<status status="PASS" start="2024-10-24T18:34:23.789523" elapsed="0.645814"/>
+</kw>
+<kw name="Then Verify Search Book with wrong title" owner="test_repositories">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:34:24.435785" elapsed="1.090230"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:34:25.526544" level="INFO">Typing text 'nonExistenBook' into text field 'id=searchBox'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>nonExistenBook</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:34:25.526264" elapsed="0.406295"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-24T18:34:27.933740" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-24T18:34:25.932971" elapsed="2.001110"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:34:27.951453" level="INFO">Current page contains element 'xpath://div[@class='rt-noData' and text()='No rows found']'.</msg>
+<arg>xpath://div[@class='rt-noData' and text()='No rows found']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:34:27.934545" elapsed="0.017081"/>
+</kw>
+<doc>Verify not able to shown book</doc>
+<status status="PASS" start="2024-10-24T18:34:24.435581" elapsed="3.516197"/>
+</kw>
+<kw name="Then Verify User able to logout" owner="test_repositories">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGOUT_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T18:34:27.952441" elapsed="0.013550"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-24T18:34:27.966672" level="INFO">Clicking element 'id=submit'.</msg>
+<arg>${LOGOUT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T18:34:27.966319" elapsed="0.061606"/>
+</kw>
+<doc>verify user able to do logout</doc>
+<status status="PASS" start="2024-10-24T18:34:27.952100" elapsed="0.075930"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-24T18:34:28.028190" elapsed="0.093880"/>
+</kw>
+<doc>verify user able to search book -- note that on the website there's no response after clicked</doc>
+<status status="PASS" start="2024-10-24T18:31:28.506585" elapsed="179.615641"/>
+</test>
+<status status="FAIL" start="2024-10-24T18:27:02.454624" elapsed="445.668010"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="2" skip="0" id="s1" name="Test Cases">Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
